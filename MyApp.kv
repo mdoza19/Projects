@@ -1,0 +1,62 @@
+
+<LoginScreen>:
+    GridLayout:
+        Label:
+            text: 'Username'
+        TextInput:
+            id:username
+            multiline:False
+            write_tab:False
+        Label:
+            text: 'Password'
+        TextInput:
+            id:password
+            multiline:False
+            password:True
+        Button:
+            text: 'Login'
+            on_press: root.greeting(username,password)
+        Button:
+            text: 'Quit'
+            on_press: root.exitbutton()
+
+<SettingsScreen>:
+    FloatLayout:
+        Button:
+            text: 'Exit'
+            size_hint: .15,.07
+            pos_hint: {'right': 1 ,'top': 1}
+            on_press: root.exitbutton()
+        Button:
+            text: 'Back'
+            size_hint: .15,.07
+            pos_hint: {'top':1}
+            on_press: root.manager.current = 'menu'
+        Label:
+            text: 'Get Episodes od Dragon Ball Super'
+            size_hint: .15,.07
+            pos_hint: {'right': .7 ,'top': .5}
+        Button:
+            text: 'Get Episodes Now'
+            size_hint: .25,.07
+            pos_hint: {'right': .3 ,'top': .5}
+            on_press: root.getepisodes()
+        Label:
+            text: 'fdfdf'
+            size_hint: .15,.07
+            pos_hint: {'right': .7 ,'top': .5}
+
+<Scrollable>:
+    Label:
+        text:root.text
+        text_size: self.width, None
+        size_hint_y: None
+        height: self.texture_size[1]
+        Button:
+            text:'Back'
+            size_hint: .25,.07
+            pos_hint: {'right': 1}
+            on_press: root.getepisodes()
+
+
+
